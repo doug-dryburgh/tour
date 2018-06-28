@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: grid;
+}
+
+.spacer {
+    z-index: -9999;
+    height: 100vh;
+}
+
+.backgroundImages {
+    display: hidden;
+}
+
+.backgroundImages li {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+}
+
+.backgroundImages li:nth-child(1) {
+    background-image: url(../images/sample.jpg);
+}
+
+.backgroundImages li:nth-child(2) {
+    background-image: url(../images/sample2.jpg);
+}
+
+.backgroundImages li:nth-child(3) {
+    background-image: url(../images/sample3.jpg);
+}
+
+.landing {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100%;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+}
+
+.landing h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.landing i {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 4em;
+}
+
+.landing i:hover {
+    color: skyblue;
+    transition: .5s;
+}
+
+
+.about {
+    display: inline-grid;
+    align-items: center;
+    grid-row-gap: 200px;
+    grid-template-columns: 1fr;
+    background-color: aliceblue;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    padding: 200px 20px 200px 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+.about img {
+    max-width: 100%;
+    max-height: 700px;
+    box-shadow: -2px 2px 5px black
+}
+
+.faq {
+    background-color: white;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    padding: 100px 20px 100px 20px;
+    z-index: 1;
+}
+
+.expandable {
+    display: block;
+    border-radius: 5px;
+    padding: 4px;
+    margin-bottom: 15px;
+}
+
+.expandable:nth-child(odd) {
+    background-color: aliceblue;
+}
+
+input {
+    display: none;
+}
+
+.question {
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.answer {
+    font-size: 0;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+}
+
+input:checked~.answer {
+    font-size: 16px;
+    opacity: 1;
+    height: auto;
+    padding: 10px 0;
+}
+
+input:checked~.answer {
+    /* grow, then fade in */
+    transition: margin .25s, padding .25s, font-size .25s, opacity .5s .25s;
+}
+
+.answer {
+    /* fade out, then shrink */
+    transition: opacity .25s, margin .5s 0.25s, font-size .5s 0.25s, padding .5s .25s;
+}
+
+.book {
+    background-color: white;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    padding: 100px 20px 100px 20px;
+    z-index: 1;
+}
+
+.contact {
+    display: inline-grid;
+    z-index: 1;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+}
+
+.links i {
+    color: black;
+    font-size: 3em;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+}
+
+.links i:hover {
+    color: blue;
+    transition: .5s;
+}
+
+.map {
+    height: 300px;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding: 50px;
+    z-index: 1;
+}
+
+@media (min-width: 375px) {
+    .landing h1 {
+        font-size: 3.5em;
+    }
+}
+
+@media (min-width: 700px) {
+    .about {
+        grid-template-columns: 1fr 1fr;
+    }
+    .about div:nth-child(4) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .about div:nth-child(8) {
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .contact {
+        grid-template-columns: 1fr 1fr;
+    }
+}
